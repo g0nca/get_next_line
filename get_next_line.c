@@ -3,80 +3,95 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ggomes-v <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/13 22:29:32 by marvin            #+#    #+#             */
-/*   Updated: 2024/11/13 22:29:32 by marvin           ###   ########.fr       */
+/*   Created: 2024/11/13 13:15:02 by ggomes-v          #+#    #+#             */
+/*   Updated: 2024/11/13 13:15:03 by ggomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "get_next_line.h"
 
-char	*read_file_lines(int file, char *str)
+static char    *extract_line(char *str)
 {
-	char *buffer;
-	int	count_bytes;
+    int i;
+    char *line;
 
-	buffer = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
-	if (!buffer)
-		return (NULL);
-	
-	count_bytes = 1;
-	while (!ft_strchr(str, '\n') && count_bytes != 0)
-	{
-		count_bytes = read(file, buffer, BUFFER_SIZE);
-		if (count_bytes == -1)
-		{
-			free (buffer);
-			return (0);
-		}
-		buffer[count_bytes] = '\0';
-		str = ft_strjoin(str, buffer);
-	}
-	free(buffer);
-	return (str);
+    while (str[i] && str[i] != '\n')
+        i++;
+    line = (char *)malloc(sizeof(char) * i + 1);
+    if (!line)
+        return (NULL);
+    
+    return (line);
+}
+static char *read_file(int fd, char *str)
+{
+    char *buffer;
+    int read_bytes;
+
+    buffer = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
+    if (!buffer)
+        return (NULL);
+    read_bytes = 1;
+    while(!ft_strchr(str, '\n') && read_bytes != 0)
+    {
+        read_bytes = read(fd, buffer, BUFFER_SIZE);
+        if (read_bytes <= 0)
+        {
+            free(buffer);
+            return (NULL);
+        }
+        
+        buffer[read_bytes] = '\0';
+        str = ft_strjoin(str, buffer);
+    }
+    free(buffer);
+    return (str);
 }
 
-char	*get_next_line(int file)
+char    *get_next_line(int fd)
 {
-	static char *str;
-	//char *reader;
+    static char *str;
+    char *line;
 
-	str = read_file_lines(file, str);
-	if (!str)
-		return (NULL);
-	if (str[0] == '\0')
-	{
-		free(str);
-		str = NULL;
-		return (NULL);
-	}
-	
-	return (str);
+    if (fd < 0 || BUFFER_SIZE <= 0)
+        return (NULL);
+    str = read_file(fd, str);
+    if (!str)
+        return (NULL);
+    if (str[0] == '\0')
+    {
+        free(str);
+        str = NULL;
+        return (NULL);
+    }
+    line = extract_line(str);
 
+    return (line);
 }
 
 int main(void)
 {
-	char *line;
-	int i;
-	int file;
+    int i;
+    char *line;
 
-	file = open("test1.txt", O_RDONLY);
-	if (file == -1) {
-		perror("Error opening file");
-		return (1);
-	}
-	i = 1;
-	printf("buffer size > %d\n", BUFFER_SIZE);
-	line = get_next_line(file);
-	while (line != 0)
-	{
-		printf("LINE[%02d]: %s\n", i, line);
-		free(line);
-		line = get_next_line(file);
-		i++;
-	}
-	close(file);
-	return (0);
+    int fd = open("text.txt", O_RDONLY);
+    if (fd == -1)
+    {
+        write(1, "\nErro ao Abrir o Ficheiro\n", 1);
+        return (0);
+    }
+    i = 0;
+    line = get_next_line(fd);
+    printf("%s\n", line);
+    /*while (line != NULL)
+    {
+        printf("LINE[%d]:%s", i, line);
+        free(line);
+        line = get_next_line(fd);
+        i++;
+    }*/
+    close(fd);
+    return (0);
 }
+
