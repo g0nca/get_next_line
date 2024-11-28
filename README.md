@@ -1,7 +1,7 @@
 💡 | What's the purpose of Get_next_line
     🚨 | The Get_next_line program will return a line read from the File Descriptor, Standard Input, or Standard Output.
 <picture>
- <source media="(prefers-color-scheme: dark)" srcset="YOUR-DARKMODE-IMAGE">
- <source media="(prefers-color-scheme: light)" srcset="YOUR-LIGHTMODE-IMAGE">
- <img alt="TEST" src="https://www.google.com/search?client=ubuntu-sn&hs=du3&sca_esv=2519e3bcac7d97bc&channel=fs&sxsrf=ADLYWIJKIPkFEYiPjhoxSRJrpFqf8yhzgw:1732800698484&q=imagens&udm=2&fbs=AEQNm0A_ElqRadfJ052eEZYKSIj__pYFaFHKdnGcO42W-poa4o9tpxFa6soGvqOj8u-AB0-z6pY-pwnaxwLpFam3FoJcRYDdtoXj0yCUs_X7jksFP2YpnifMYj8pbeoVu8W2EeFSDrMqvajNNg1OAbTi4gwofp5mFawKOC_rVYGhh8evkqNOwTw&sa=X&ved=2ahUKEwj72eXQkf-JAxXxUKQEHRJgKgoQtKgLegQIFRAB&biw=1920&bih=882&dpr=1#vhid=MwOFoUNcSUi9tM&vssid=mosaic">
+  <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/25423296/163456776-7f95b81a-f1ed-45f7-b7ab-8fa810d529fa.png">
+  <source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/25423296/163456779-a8556205-d0a5-45e2-ac17-42d089e3c3f8.png">
+  <img alt="Shows an illustrated sun in light mode and a moon with stars in dark mode." src="https://user-images.githubusercontent.com/25423296/163456779-a8556205-d0a5-45e2-ac17-42d089e3c3f8.png">
 </picture>
