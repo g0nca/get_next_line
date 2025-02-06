@@ -1,6 +1,6 @@
 # Get Next Line 📄
 <p align="center">
-    <img width="200" src="Screenshot from 2025-02-06 13-34-08.png">
+    <img width="200" src="Success.png">
 </p>
 
 
