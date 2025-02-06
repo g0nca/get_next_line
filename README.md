@@ -16,10 +16,10 @@ It follows these rules:
 
 ## 🛠️ How to Compile
 
-`get_next_line` can be compiled along with your project using a compiler like **gcc**:
+`get_next_line` can be compiled along with your project using a compiler like **cc**:
 
 ```sh
-gcc -Wall -Wextra -Werror -D BUFFER_SIZE=42 get_next_line.c get_next_line_utils.c -o gnl
+cc -Wall -Wextra -Werror -D BUFFER_SIZE=42 get_next_line.c get_next_line_utils.c -o gnl
 ```
 
 Here, `BUFFER_SIZE` is a macro that defines the buffer size used for reading the file. The value can be adjusted as needed.
