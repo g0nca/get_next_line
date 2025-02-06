@@ -1,7 +1,7 @@
 # Get Next Line 📄
 
 ## GRADE
-![](Screenshot from 2025-02-06 13-34-08.png)
+![a](Screenshot from 2025-02-06 13-34-08.png)
 
 ## 📌 Description
 
