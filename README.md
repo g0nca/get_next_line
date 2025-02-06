@@ -1,10 +1,13 @@
 # Get Next Line 📄
 
+## GRADE
+[Screenshot from 2025-02-06 13-34-08](https://github.com/user-attachments/assets/b020a123-26c8-4cbd-aba9-a93ac92d44aa)
+
 ## 📌 Description
 
 **get_next_line** is a project aimed at implementing a function capable of reading a line from a file descriptor efficiently. This function is widely used in programs that require reading files or standard input (stdin) line by line.
 
-## ⚙️ How It Works
+## ⚙️ How It Works!
 
 The function `get_next_line(int fd)` returns a line from the file specified by the descriptor `fd` every time it is called. The reading is done incrementally, using a dynamic buffer to store the data.
 
