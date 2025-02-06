@@ -1,7 +1,7 @@
 # Get Next Line 📄
 
 ## GRADE
-![Preview do Projeto](images/imagem.png)
+![Preview do Projeto](get_next_line/2025-02-06.png)
 
 ## 📌 Description
 
