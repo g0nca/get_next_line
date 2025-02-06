@@ -1,32 +1,32 @@
-# Get Next Line
+# Get Next Line 📄
 
-## Descrição
+## 📌 Description
 
-O **get_next_line** é um projeto que visa a implementação de uma função capaz de ler uma linha de um descritor de arquivo (file descriptor) de forma eficiente. Essa função é amplamente utilizada em programas que exigem leitura de arquivos ou entrada padronizada (stdin) linha por linha.
+**get_next_line** is a project aimed at implementing a function capable of reading a line from a file descriptor efficiently. This function is widely used in programs that require reading files or standard input (stdin) line by line.
 
-## Funcionamento
+## ⚙️ How It Works
 
-A função `get_next_line(int fd)` retorna uma linha do arquivo especificado pelo descritor `fd` sempre que for chamada. A leitura é feita de maneira incremental e utiliza um buffer dinâmico para armazenar os dados.
+The function `get_next_line(int fd)` returns a line from the file specified by the descriptor `fd` every time it is called. The reading is done incrementally, using a dynamic buffer to store the data.
 
-Ela segue as seguintes regras:
-- Retorna uma linha do arquivo, incluindo o `\n` caso esteja presente.
-- Retorna `NULL` ao final do arquivo ou em caso de erro.
-- Funciona corretamente com qualquer tipo de arquivo.
-- Utiliza uma variável estática para armazenar dados entre chamadas sucessivas.
+It follows these rules:
+- Returns a line from the file, including `\n` if present.
+- Returns `NULL` at the end of the file or in case of an error.
+- Works correctly with any type of file.
+- Uses a static variable to store data between successive calls.
 
-## Como Compilar
+## 🛠️ How to Compile
 
-O `get_next_line` pode ser compilado junto com seu projeto utilizando um compilador como o **gcc**:
+`get_next_line` can be compiled along with your project using a compiler like **gcc**:
 
 ```sh
 gcc -Wall -Wextra -Werror -D BUFFER_SIZE=42 get_next_line.c get_next_line_utils.c -o gnl
 ```
 
-Aqui, `BUFFER_SIZE` é uma macro que define o tamanho do buffer utilizado para leitura do arquivo. O valor pode ser ajustado conforme necessidade.
+Here, `BUFFER_SIZE` is a macro that defines the buffer size used for reading the file. The value can be adjusted as needed.
 
-## Uso
+## 🚀 Usage
 
-Exemplo de uso do `get_next_line` para ler um arquivo linha por linha:
+Example of using `get_next_line` to read a file line by line:
 
 ```c
 #include <stdio.h>
@@ -35,7 +35,7 @@ Exemplo de uso do `get_next_line` para ler um arquivo linha por linha:
 
 int main(void)
 {
-    int fd = open("arquivo.txt", O_RDONLY);
+    int fd = open("file.txt", O_RDONLY);
     char *line;
     
     if (fd == -1)
@@ -51,24 +51,15 @@ int main(void)
 }
 ```
 
-## Estrutura do Projeto
+## 📂 Project Structure
 
-- `get_next_line.c` → Contém a implementação principal da função `get_next_line`.
-- `get_next_line_utils.c` → Funções auxiliares utilizadas pelo `get_next_line`.
-- `get_next_line.h` → Arquivo de cabeçalho com as declarações das funções.
-- `arquivo.txt` → Arquivo de teste para leitura linha por linha.
+- `get_next_line.c` → Contains the main implementation of `get_next_line`.
+- `get_next_line_utils.c` → Auxiliary functions used by `get_next_line`.
+- `get_next_line.h` → Header file with function declarations.
+- `file.txt` → Test file for reading line by line.
 
-## Regras e Restrições
+## ⚠️ Rules & Restrictions
 
-- O código deve estar em conformidade com a **Norminette**.
-- O uso de funções de alocação dinâmica (à exceção de `malloc`, `free` e `read`) é proibido.
-- A função deve funcionar com diferentes tamanhos de `BUFFER_SIZE`.
-
-## Autores
-
-- [Seu Nome](https://github.com/seu_usuario)
-
----
-
-Sinta-se à vontade para modificar este README conforme necessário. 🚀
-
+- The code must comply with **Norminette**.
+- The use of dynamic allocation functions (except for `malloc`, `free`, and `read`) is prohibited.
+- The function must work with different `BUFFER_SIZE` values.
