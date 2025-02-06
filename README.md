@@ -1,7 +1,7 @@
 # Get Next Line 📄
 
 ## GRADE
-[Screenshot from 2025-02-06 13-34-08](https://github.com/user-attachments/assets/b020a123-26c8-4cbd-aba9-a93ac92d44aa)
+![](Screenshot from 2025-02-06 13-34-08.png)
 
 ## 📌 Description
 
