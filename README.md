@@ -1,5 +1,4 @@
 # Get Next Line 📄
-## GRADE
 <p align="center">
     <img width="200" src="Screenshot from 2025-02-06 13-34-08.png">
 </p>
